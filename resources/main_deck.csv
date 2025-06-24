@@ -1,0 +1,10 @@
+type,name,value,specialties,isForeignAlly,isPresOnly,ability
+influence,Influence 1,1,,,,
+influence,Influence 2,2,,,,
+corruption,Corruption 1,1,,,,
+corruption,Corruption 3,3,,,,
+crony,Justice Judy,2,Justice,false,false,
+crony,Finance Fred,3,Finance,false,false,
+crony,Putin the Smooth,0,,true,false,Cannot be outbid
+crony,Boss Man,5,,false,true,
+crony,Tech Tandi,2,Communications;Service Delivery,false,false,

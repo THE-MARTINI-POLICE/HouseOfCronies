@@ -1,0 +1,3 @@
+name,effect,triggerType
+Hawks Investigation,Remove a crony if corruption is played,onCorruptionPlayed
+Free Press Leak,Look at a player’s hand,onAnyTurn
