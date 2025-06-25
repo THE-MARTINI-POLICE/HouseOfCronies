@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "Server",
+            "projectName": "houseofcronies_1314c7d2"
+        },
+        {
+            "justMyCode": false
+        }
+    ]
+}
