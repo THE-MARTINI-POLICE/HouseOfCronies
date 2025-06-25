@@ -13,7 +13,7 @@ public class ClientL{
         BufferedWriter bufferedWriter = null;
 
         try {
-            socket = new Socket("localhost", 1234);
+            socket = new Socket("192.168.68.63", 5000);
             
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());

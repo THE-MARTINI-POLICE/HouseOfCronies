@@ -15,7 +15,7 @@ public class Server {
         BufferedWriter writer = null;
 
         // Create a server socket on port 12345 outside the loop and use try-with-resources
-        try (ServerSocket serverSocket = new ServerSocket(1234)) {
+        try (ServerSocket serverSocket = new ServerSocket(5000, 50, InetAddress.getByName("192.168.68.63"))) {
             System.out.println("Server started. Waiting for clients...");
 
             while (true) {
