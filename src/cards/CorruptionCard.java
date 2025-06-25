@@ -14,6 +14,6 @@ public class CorruptionCard extends Card {
 
     @Override
     public String toString() {
-        return "Corruption: " + value;
+        return "Corruption value: " + value;
     }
 }
