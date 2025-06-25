@@ -39,7 +39,7 @@ public class Server {
                         }
                         System.out.println("Received from client: " + clientMessage);
                         // Process the message and send a response
-                        String response = "Server received: " + clientMessage;
+                        String response = "Server received:"; 
                         writer.write(response);
                         writer.newLine(); 
                         writer.flush();

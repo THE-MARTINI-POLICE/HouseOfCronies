@@ -36,6 +36,7 @@ public class ClientL{
                     break;
                 } 
             }
+            scanner.close();
 
 
         }catch(IOException e){
