@@ -1,0 +1,26 @@
+# Ignore OS stuff
+.DS_Store
+Thumbs.db
+
+# Ignore build files
+bin/
+obj/
+build/
+
+# Ignore IDE folders
+.vscode/
+.idea/
+
+# Ignore compiled code
+*.class
+*.exe
+*.dll
+*.pyc
+*.o
+*.out
+
+# Ignore environment configs
+.env
+
+# Ignore logs
+*.log
