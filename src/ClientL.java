@@ -30,7 +30,7 @@ public class ClientL{
                 bufferedWriter.newLine();
                 bufferedWriter.flush( );
 
-                System.out.println("Server:" +bufferedReader.readLine());
+                System.out.println(bufferedReader.readLine());
 
                 if(msgToSend.equalsIgnoreCase("Bye")){
                     break;
