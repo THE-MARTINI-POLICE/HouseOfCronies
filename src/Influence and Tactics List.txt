@@ -1,0 +1,23 @@
+INFLUENCE
+Influence 2 x 6
+Influence 3 x 6
+Influence 4 x 6
+Influence 5 x 6
+----------------
+CORRUPTION
+Corruption 4 x 4
+Corruption 5 x 3
+Corruption 6 x 3
+Corruption 7 x 3
+----------------
+TACTICS
+Cabinet Reshuffle x 4
+Floor Crossing x 4
+Saxonworld Shebeen x 4
+Diplomatic Incident x 4 
+Saxonworld Shebeen x 4
+Point of Order x 4
+Hawks Investigation x 4
+------------------------
+
+Cabinet Reshuffle
