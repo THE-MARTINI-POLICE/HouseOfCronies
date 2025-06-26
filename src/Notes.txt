@@ -1,0 +1,27 @@
+Multiple clients need to be able to communicate with the server concurrently. Multi-Threading is therefore required. 
+
+Client Class:
+    Each client creates a Socket object. The Socket contains the port(on which the server object listens for incoming connections) and the IP Address of the server.
+
+    Attributes:
+        Socket socket = null;
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+
+
+Server Class:
+    The server creates a server Socket object(called serverSocket) and waits for clients to connect to the server via the Socket.
+    serverSocket.accept returns a Socket object that describes the connection between the server and the new client.
+    The Socket and the client count is passed into the ClientHandler that implements Runnable.
+    The new Runnable object is then passed into the Thread constructor and the Thread is started.
+    Each thread serves as the connection between a client and the server.
+
+
+ClientHandler:
+    Implements Runnable: Runnable is an interface that is to be implemented by a class whose instances are intended to be executed by a thread.
+    The ClientHandler overrides the run() subroutine. This is the subroutine that each thread will execute after being started().
+    The run() subroutine includes all the duties that the server should have.
+    
+    

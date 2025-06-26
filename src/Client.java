@@ -3,7 +3,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 
-public class ClientL{
+public class Client{
     public static void main(String[] args){
 
         Socket socket = null;
@@ -13,7 +13,7 @@ public class ClientL{
         BufferedWriter bufferedWriter = null;
 
         try {
-            socket = new Socket("192.168.68.63", 5000);
+            socket = new Socket("192.168.68.61", 5000);
             
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
@@ -32,34 +32,38 @@ public class ClientL{
 
                 System.out.println(bufferedReader.readLine());
 
-                if(msgToSend.equalsIgnoreCase("Bye")){
+                //Message that disconnects the client from the server.
+                if(msgToSend.equalsIgnoreCase("BYE")){
                     break;
                 } 
             }
             scanner.close();
-
-
+        
+        //If the Socket connection can not be established.
         }catch(IOException e){
-            System.err.println("Failed1");
+            e.printStackTrace(); 
         } finally{
             try{
                 if(socket != null){
                     socket.close();
                 }
-                if (inputStreamReader != null) {
+                else if(inputStreamReader != null) {
                     inputStreamReader.close();
                 }
-                if(outputStreamWriter != null){
+                else if(outputStreamWriter != null){
                     outputStreamWriter.close();
                 }
-                if(bufferedReader != null){
+                else if(bufferedReader != null){
                     bufferedReader.close();
                 }
-                if(bufferedWriter != null){
+                else if(bufferedWriter != null){
                     bufferedWriter.close();
                 }
+                else{
+                    //Do nothing
+                }
             }catch(IOException e){
-                System.err.println("Failed2");
+                System.err.println("Failed to close connection.");
             }
         }
     }
