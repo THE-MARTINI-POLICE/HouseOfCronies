@@ -2,20 +2,23 @@ package cards;
 
 import java.util.Set;
 
+import java.util.*;
+
 public class CronyCard extends Card {
     private int voteValue;
     private Set<String> specialties; // e.g., "Finance", "Justice"
     private boolean isForeignAlly;
     private boolean isPresidentOnly;
-    private String ability;
-
-    public CronyCard(String name, int voteValue, Set<String> specialties, boolean isForeignAlly, boolean isPresidentOnly, String ability) {
+    private int cost;
+    private int tacticPickup;
+    public CronyCard(String name, int voteValue, Set<String> specialties, boolean isForeignAlly, boolean isPresidentOnly, int cost, int tacticPickup) {
         super(name);
         this.voteValue = voteValue;
         this.specialties = specialties;
         this.isForeignAlly = isForeignAlly;
         this.isPresidentOnly = isPresidentOnly;
-        this.ability = ""; // Placeholder for any special ability
+        this.cost = cost;
+        this.tacticPickup = tacticPickup;
     }
 
     public int getVoteValue() {
@@ -47,6 +50,6 @@ public class CronyCard extends Card {
         return name + " [Votes: " + voteValue +
             ", Specialties: " + specialties +
             (isPresidentOnly ? ", PRES-ONLY" : "") +
-            (isForeignAlly ? ", FOREIGN ALLY, Ability: " + ability : "") + "]";
+            (isForeignAlly ? ", FOREIGN ALLY" : "") + "]";
     }
 }

@@ -37,7 +37,7 @@ public class DeckLoader {
                         if (!specialtiesStr.isEmpty()) {
                             specialties.addAll(Arrays.asList(specialtiesStr.split(";")));
                         }
-                        deck.add(new CronyCard(name, value, specialties, isForeign, isPresOnly, ability));
+                        deck.add(new CronyCard(name, value, specialties, isForeign, isPresOnly, 0, 0)); // cost and tacticPickup are hardcoded for now
                         break;
                 }
             }
