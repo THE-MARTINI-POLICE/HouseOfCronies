@@ -23,7 +23,7 @@ public class DeckLoader {
                 String specialtiesStr = parts[3].trim();
                 boolean isForeign = Boolean.parseBoolean(parts[4].trim());
                 boolean isPresOnly = Boolean.parseBoolean(parts[5].trim());
-                String ability = parts.length > 6 ? parts[6].trim() : "";
+                
 
                 switch (type.toLowerCase()) {
                     case "influence":

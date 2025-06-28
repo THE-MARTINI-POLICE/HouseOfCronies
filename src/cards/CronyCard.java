@@ -1,7 +1,5 @@
 package cards;
 
-import java.util.Set;
-
 import java.util.*;
 
 public class CronyCard extends Card {
@@ -25,8 +23,11 @@ public class CronyCard extends Card {
         return voteValue;
     }
 
-    public Set<String> getSpecialties() {
-        return specialties;
+    public int getCost() {
+        return cost;
+    }
+    public int getTacticPickup() {
+        return tacticPickup;
     }
 
     public boolean isForeignAlly() {

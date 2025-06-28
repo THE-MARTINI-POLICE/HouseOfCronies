@@ -69,13 +69,7 @@ public class Player {
             }
         }
 
-        for (String specialty : crony.getSpecialties()) {
-            if (!cabinetPositions.containsKey(specialty)) {
-                cabinetPositions.put(specialty, crony);
-                System.out.println(name + " assigned " + crony.getName() + " to " + specialty);
-                return true;
-            }
-        }
+        
 
         // Fallback: fill Pres or VP if not already
         if (!cabinetPositions.containsKey("President")) {
