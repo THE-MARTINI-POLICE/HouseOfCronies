@@ -4,8 +4,8 @@ public class CorruptionCard extends Card {
     private int value;
     private int identifier;
 
-    public CorruptionCard(int value, int identifier) {
-        super("Corruption (" + value + ")");
+    public CorruptionCard(String name, int value, int identifier) {
+        super(name);
         this.value = value;
         this.identifier = identifier;
     }

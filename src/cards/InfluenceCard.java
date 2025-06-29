@@ -4,9 +4,10 @@ public class InfluenceCard extends Card {
     private int value;
     private int identifier;
 
-    public InfluenceCard(int value, int identifier) {
-        super("Influence (" + value + ")");
+    public InfluenceCard(String name, int value, int identifier) {
+        super(name);
         this.value = value;
+        this.identifier = identifier;
     }
 
     public int getValue() {
