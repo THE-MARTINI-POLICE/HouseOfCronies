@@ -1,8 +1,3 @@
-CRONIES
-----------------------------------------------------
-Format:
-Name/Position/Votes/Cost/TacticsDrawn(if applicable)
-----------------------------------------------------
 Hashim Amla/Service/1/4/1
 Fikile Mbalula/Justice;Communication/4/4/-
 Nhlanhla Nene/Finance/3/2/-
@@ -31,6 +26,9 @@ Blade Nzimande/Finance;Service/4/4/-
 Steve Hofmeyr/Communication/-1/1/1
 Shaun Abrahams/Justice/-1/1/1
 Jacob Zuma/Executive/-2/3/2
+
+Format:
+Name/Position/Votes/Cost/TacticsDrawn(if applicable)
 ----------------------------------------------------
 Foreign Allies
 ----------------------------------------------------
