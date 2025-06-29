@@ -7,7 +7,7 @@ public class Deck {
     private Stack<Card> drawPile;
     private List<Card> discardPile;
     private Stack<Card> tacticCards;
-    
+    private List<Card> drawnCards;
 
     public Deck(List<Card> cards, List<Card> TacticCards) {
         Collections.shuffle(cards); // Shuffle once
@@ -16,6 +16,7 @@ public class Deck {
         this.tacticCards = new Stack<>();
         this.tacticCards.addAll(TacticCards);
         this.discardPile = new ArrayList<>();
+        this.drawnCards = new ArrayList<>();
     }
 
     public boolean isEmpty() {
@@ -53,6 +54,21 @@ public class Deck {
 
     public void discardAll(List<Card> cards) {
         discardPile.addAll(cards);
+    }
+
+    public void returnToDrawPile(List<Card> cards) {
+        drawPile.addAll(cards);
+    }
+    public void drawTable(List<Card> cards) {
+        List<Card> drawn = draw(5);
+        drawnCards.addAll(drawn);
+    }
+    public List<Card> getDrawnCards() {
+        return new ArrayList<>(drawnCards);
+    }
+    public void discardTable(List<Card> cards) {
+        discardAll(cards);
+        drawnCards.removeAll(cards);
     }
 
     public void shuffleBackDiscards() {
