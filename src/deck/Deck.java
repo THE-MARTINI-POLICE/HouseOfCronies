@@ -6,11 +6,15 @@ import java.util.*;
 public class Deck {
     private Stack<Card> drawPile;
     private List<Card> discardPile;
+    private Stack<Card> tacticCards;
+    
 
-    public Deck(List<Card> cards) {
+    public Deck(List<Card> cards, List<Card> TacticCards) {
         Collections.shuffle(cards); // Shuffle once
         this.drawPile = new Stack<>();
         this.drawPile.addAll(cards);
+        this.tacticCards = new Stack<>();
+        this.tacticCards.addAll(TacticCards);
         this.discardPile = new ArrayList<>();
     }
 
