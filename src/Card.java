@@ -21,6 +21,17 @@ public class Card {
     }
 
     public String getInfo() {
-        return "Type: " + type + ", Name: " + name + ", Position: "+ position + ", Votes: " + votes+ ", Description: " + description + ", Cost: " + cost + '\n';
+
+        if(type.equals("Tactic")) {
+            return name + '\n';
+        }else if(type.equals("Cronie")) {
+            return name + ", Position: " + position + ", Votes: " + votes + ", Tactics Drawn: " + numTaticCardsDrawn + ", Cost: " + cost + '\n';
+        }else if(type.equals("Corruption")) {
+            return type + ", Cost: " + cost + '\n';
+        }else if(type.equals("Influence")) {
+            return type + ", Cost: " + cost + '\n';
+        }else{
+            return "Invalid card type.";
+        }
     }
 }
