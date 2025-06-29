@@ -39,15 +39,7 @@ public class Player {
     }
 
     public boolean addToCabinet(CronyCard crony) {
-        if (crony.isForeignAlly()) {
-            if (foreignAlly != null) {
-                System.out.println("You already have a foreign ally.");
-                return false;
-            }
-            foreignAlly = crony;
-            System.out.println(name + " added foreign ally: " + crony.getName());
-            return true;
-        }
+        
 
         if (cabinetPositions.size() >= MAX_CABINET_SIZE) {
             System.out.println("Cabinet is full.");
