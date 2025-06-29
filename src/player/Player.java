@@ -10,7 +10,7 @@ public class Player {
     private List<Card> hand = new ArrayList<>();
     private List<TacticCard> tactics = new ArrayList<>();
     private Map<String, CronyCard> cabinetPositions = new HashMap<>();
-    private CronyCard foreignAlly = null;
+    private ForeignAlly foreignAlly = null;
 
     private static final int MAX_CABINET_SIZE = 6;
 
@@ -34,7 +34,7 @@ public class Player {
         return cabinetPositions;
     }
 
-    public CronyCard getForeignAlly() {
+    public ForeignAlly getForeignAlly() {
         return foreignAlly;
     }
 
