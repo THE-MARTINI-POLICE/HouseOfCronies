@@ -1,5 +1,6 @@
 package deck;
 import cards.*;
+import cards.tactics.TacticCard;
 
 import java.util.*;
 import java.io.*;
@@ -8,7 +9,7 @@ import java.io.*;
 public class DeckLoader {
     public static List<Card> loadCronyDeck(String filePath){
         List<Card> cronydeck = new ArrayList<>();
-        int idCounter = 3000;
+        int idCounter = 1000;
         boolean isPresidentOnly = false;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -43,7 +44,7 @@ public class DeckLoader {
 
     public static List<Card> loadMoneyDeck(String filePath) {
         List<Card> moneyDeck = new ArrayList<>();
-        int idCounter = 1000;
+        int idCounter = 2000;
 
         try (BufferedReader reader =new BufferedReader(new FileReader(filePath))){
             String line = reader.readLine();
@@ -68,6 +69,45 @@ public class DeckLoader {
 
         return moneyDeck;
     }
+    public static List<Card> loadTacticDeck(String filePath) {
+        List<Card> tacticDeck = new ArrayList<>();
+        int idCounter = 3000;
 
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line = reader.readLine();
+            while (line != null) {
+                String[] parts = line.split(",");
+                String name = parts[0].trim();
+                int quantity = Integer.parseInt(parts[1].trim());
+                for (int i = 0; i < quantity; i++) {
+                    tacticDeck.add(new TacticCard(name, idCounter++));
+                }
+                
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
 
+        }
+        return tacticDeck;
+    }
+
+    public static List<Card> loadForeignAllyDeck(String filePath) {
+        List<Card> foreignAllyDeck = new ArrayList<>();
+        int idCounter = 4000;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line = reader.readLine();
+            while (line != null) {
+                String[] parts = line.split(",");
+                String name = parts[0].trim();
+                String description = parts[1];
+
+                foreignAllyDeck.add(new ForeignAlly(name, description, idCounter++));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }          
+
+        return foreignAllyDeck;
+    }
 }

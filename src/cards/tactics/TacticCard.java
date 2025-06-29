@@ -1,10 +1,16 @@
 package cards.tactics;
 
-public class TacticCard {
+import cards.Card;
 
-    public TacticCard(String string) {
-        //TODO Auto-generated constructor stub
-        System.out.println("TacticCard constructor called with: " + string);
+public class TacticCard extends Card {
+    private int id;
+
+    public TacticCard(String name, int id) {
+        super(name);
+        this.id = id;
+    }
+    public int getId() {
+        return id;
     }
 
 }
