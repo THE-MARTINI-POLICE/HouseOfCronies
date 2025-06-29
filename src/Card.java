@@ -20,7 +20,7 @@ public class Card {
         this.cost = cost;
     }
 
-    public String getInfo() {
+    public String displayCard() {
 
         if(type.equals("Tactic")) {
             return name + '\n';
@@ -33,5 +33,9 @@ public class Card {
         }else{
             return "Invalid card type.";
         }
+    }
+
+    public String getInfoString(Card card) {
+        return card.description;
     }
 }

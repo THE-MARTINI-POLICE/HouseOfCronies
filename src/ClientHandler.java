@@ -6,9 +6,11 @@ public class ClientHandler implements Runnable {
 
     //The attributes of each client that is connected to the server.
     private Socket clientSocket;
-    private int clientNumber;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
+
+    //Game Playing Attributes
+    private int clientNumber;
 
     //Constructor
     //The socket that is passed into the ClientHandler constructor is created by serverSocket.accpet. 

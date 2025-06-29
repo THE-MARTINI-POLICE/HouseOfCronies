@@ -1,24 +1,32 @@
 import java.util.Stack;
+
+
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 
+// Import necessary classes to shuffle the deck.
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Game {
 
     //Attributes
-    //Keep in mind that the deck is a stack of cards. So can push onto the deck and pop from the deck.
-    public Stack<Card> deck = new Stack<>();
-    public Stack<Card> discardPile = new Stack<>(); //Discard pile for cards that are no longer in play
+    private Stack<Card> deck = new Stack<>();
+    private Stack<Card> discardPile = new Stack<>(); //Discard pile for cards that are no longer in play
+    private Card[] gameTable; //The five cards that are in play in the current round.
     
 
     //Constructor
     public Game() {
-        // Initialize the deck with cards
         initializeDeck();
+        gameTable = new Card[5];
     }
 
-    //Read from textfile and initialize the deck with cards
-    private void initializeDeck() {
+    //Create the deck of cards.
+    public void initializeDeck() {
 
         //To make code more readable.
         String two = "Influence/Corruption card with a value of 2.";
@@ -95,28 +103,68 @@ public class Game {
         }
     }
 
-    //Shuffke the deck attribute
-    private void shuffleDeck() {
-        // Shuffle the deck
-        return; // Placeholder for shuffle logic
+    //Shuffle the deck of cards.
+    public void shuffleDeck() {
+        //The shuffle function, shuffles lists. So the stack needs to be converted to a list first.
+        
+        for(int i=0; i<2;i++){
+            Card[] deckArray = deck.toArray(new Card[0]); //Convert the stack to an array.
+            List<Card> deckList = Arrays.asList(deckArray); //Convert the array to a list.
+            Collections.shuffle(deckList); //Shuffle the list.
+            Card[] shuffledArray = deckList.toArray(new Card[0]); //Convert shuffled deck back to array.
+            deck.clear(); //Clear the deck that has not been shuffled.
+
+            for (Card element : shuffledArray) {
+                deck.push(element);
+            }
+        }  
     }
 
-    private void displayDeck() {
+    //Display the deck. For testing purposes only.
+    public void displayDeck() {
         // Display the deck
         if (deck.isEmpty()) {
             System.out.println("The deck is empty.");
             return;
         }
-        System.out.println("Current deck:");
+        System.out.println("=====================CURRENT DECK=====================" + '\n' + "There are " + deck.size() + " cards in the deck."+ '\n');
+        
         for (Card card : deck) {
-            System.out.println(card.getInfo());
+            System.out.println(card.displayCard());
         }
     }
 
-    //For testing purposes, we can print the deck to see if it has been initialized correctly.
+    public void setGameTable() {
+        for(int i=0;i<5;i++){
+            gameTable[i] = deck.pop();
+        }
+    }
+
+    public void displayGameTable(){
+        System.out.println("=====================CARDS IN PLAY=====================" + '\n');
+        for(int i=0;i<5;i++){
+            System.out.println(gameTable[i].displayCard());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    //Testing the class.
     public static void main(String[] args) {
-        Game testGame = new Game();
-        testGame.displayDeck();
+        Game testGame = new Game(); //Creates a deck of cards.
+        testGame.shuffleDeck(); //Shuffles the deck of cards.
+        testGame.displayDeck(); //Display the deck of cards.
+        testGame.setGameTable();
+        testGame.displayGameTable();
+
     }
 
 }

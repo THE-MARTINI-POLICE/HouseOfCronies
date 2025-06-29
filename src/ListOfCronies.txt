@@ -1,28 +1,28 @@
 Hashim Amla/Service/1/4/1
-Fikile Mbalula/Justice;Communication/4/4/-
+Fikile Mbalula/Justice or Communication/4/4/-
 Nhlanhla Nene/Finance/3/2/-
 Zwlenzima Vavi/Finance/3/2/-
 Bheki Cele/Justice/3/2/-
-Malusi Gigaba/Finance;Service/4/4/-
-Gwede Mantashe/Service;Communication/4/4/-
-Pravin Gordhan/Finance;Service/4/4/-
-Nkosazana Dlamini-Zuma/Justice;Service/4/4/-
+Malusi Gigaba/Finance or Service/4/4/-
+Gwede Mantashe/Service or Communication/4/4/-
+Pravin Gordhan/Finance or Service/4/4/-
+Nkosazana Dlamini-Zuma/Justice or Service/4/4/-
 Mmusi Maiamane/Executive/5/5/-
 Cyril Ramaphosa/Executive/5/5/-
 John Steenhuisen/Communication/3/2/-
-Helen Zille/Service;Communication/4/4/-
+Helen Zille/Service or Communication/4/4/-
 Julius Malema/Executive/5/5/-
 Floyd Shivambu/Finance/3/2/-
 Hlaudi Motsoeneng/Communication/-1/1/1
-The Guptas/Finance;Justice/-2/3/2
+The Guptas/Finance or Justice/-2/3/2
 Khanyi Mbau/Finance/1/4/1
 Robert Mugabe/Executive/-2/3/2
 Oscar Pistorius/Justice/1/4/1
 Trevor Noah/Communication/1/4/1
-Baleka Mbete/Justice;Communication/4/4/-
+Baleka Mbete/Justice or Communication/4/4/-
 Patricia De Lille/Service/3/2/-
 Thuli Madonsela/Justice/3/2/-
-Blade Nzimande/Finance;Service/4/4/-
+Blade Nzimande/Finance or Service/4/4/-
 Steve Hofmeyr/Communication/-1/1/1
 Shaun Abrahams/Justice/-1/1/1
 Jacob Zuma/Executive/-2/3/2
