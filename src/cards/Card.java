@@ -1,7 +1,7 @@
 package cards;
 
 public abstract class Card {
-    protected static String name;
+    protected String name;
 
     public Card(String name) {
         this.name = name;

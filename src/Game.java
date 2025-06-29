@@ -15,6 +15,7 @@ public class Game {
 
     //Attributes
     private Stack<Card> deck = new Stack<>();
+    @SuppressWarnings("unused")
     private Stack<Card> discardPile = new Stack<>(); //Discard pile for cards that are no longer in play
     private Card[] gameTable; //The five cards that are in play in the current round.
     
