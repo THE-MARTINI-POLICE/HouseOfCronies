@@ -7,8 +7,8 @@ import game.Game;
 
 public class HawksInvestigation extends TacticCard {
 
-    public HawksInvestigation() {
-        super("Hawks Investigation");
+    public HawksInvestigation(String name, int identifier) {
+        super(name, identifier);
     }
 
     //@Override

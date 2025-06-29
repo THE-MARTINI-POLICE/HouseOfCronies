@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DeckLoader",
+            "request": "launch",
+            "mainClass": "deck.DeckLoader",
+            "projectName": "houseofcronies_1314c7d2"
+        },
+        {
+            "type": "java",
             "name": "Game",
             "request": "launch",
             "mainClass": "Game",
