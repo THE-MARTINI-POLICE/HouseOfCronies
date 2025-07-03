@@ -1,19 +1,19 @@
-
 package gui;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
+
 public class Gui {
     private JFrame frame;
     private JPanel panel;
 
     public Gui() {
         frame = new JFrame("House of Cronies");
+        panel = new JPanel();
+        panel.setLayout(null); // Use absolute positioning
+        panel.setBackground(Color.WHITE); // Optional: to see the panel bounds
         
-        
-
-       
-        
+        frame.add(panel);
         frame.setSize(1920, 1080);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -22,8 +22,6 @@ public class Gui {
     public void toetsgui() {
         String path ="/Users/diehanvanderwesthuizen/houseofcronies/resources/cards/";
         System.out.println("This is a test method.");
-        
-     
         
         Map<String, String> cardImages = new HashMap<>();
         cardImages.put("corruption 4", path + "corruption4.png");
@@ -40,6 +38,7 @@ public class Gui {
         Set<JLabel> labels = createLabels(iconSet);
         scaleIcons(labels);
         setDisplayCoordinates(labels);
+        panel.repaint();
     }
 
     public Set<JLabel> createLabels(Set<ImageIcon> icons){
@@ -49,35 +48,51 @@ public class Gui {
             labels.add(label);
         }
         return labels;
-
     }
+    
     public void setDisplayCoordinates(Set<JLabel> labels) {
-        int x = 0;
-        int y = 0;
+        int cardWidth = 150;
+        int cardHeight = 225;
+        int spacing = 20; // Space between cards
+        
+        // Calculate total width needed for 5 cards
+        int totalWidth = (5 * cardWidth) + (4 * spacing);
+        
+        // Center the cards horizontally and vertically
+        int startX = (frame.getWidth() - totalWidth) / 2;
+        int startY = (frame.getHeight() - cardHeight) / 2;
+        
+        int currentX = startX;
+        int cardCount = 0;
+        
         for (JLabel label : labels) {
-            label.setBounds(x, y, 200, 300); // Set the size of each label
-            x += 100; // Move to the right for the next label
-            if (x > frame.getWidth() - 250) { // If we reach the end of the frame width
-                x += 100; // Reset x to start from the left again
-                y += 1100; // Move down for the next row
-            }
-            frame.add(label);
+            if (cardCount >= 5) break; // Only display 5 cards
+            
+            label.setBounds(currentX, startY, cardWidth, cardHeight);
+            currentX += cardWidth + spacing;
+            panel.add(label);
+            cardCount++;
         }
     }
+    
     public void scaleIcons(Set<JLabel> labels) {
+        int cardWidth = 150;
+        int cardHeight = 225;
+        
         for (JLabel label : labels) {
             ImageIcon icon = (ImageIcon) label.getIcon();
-            Image image = icon.getImage();
-            Image scaledImage = image.getScaledInstance(200, 300, Image.SCALE_SMOOTH);
-            label.setIcon(new ImageIcon(scaledImage));
+            if (icon != null) {
+                Image image = icon.getImage();
+                Image scaledImage = image.getScaledInstance(cardWidth, cardHeight, Image.SCALE_SMOOTH);
+                label.setIcon(new ImageIcon(scaledImage));
+            }
         }
     }
 
     public static void main(String[] args) {
-
-
-        Gui gui = new Gui();
-        gui.toetsgui();
-        gui.frame.setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            Gui gui = new Gui();
+            gui.toetsgui();
+        });
     }
 }
